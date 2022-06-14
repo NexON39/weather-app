@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+:root {
+    --gold: #FF9900;
+    --light-gray: #ababab;
+    --gray:  #666666;
+    --dark-gray: #333333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    padding: 0 3rem;
+}
+
+/* header section */
+
+/* form section */
+
+.form-section, 
+.form-section .form,
+.form-section form {
+    width: 100%;
+}
+
+.form-section form input[type='text'] {
+    outline: none;
+    border: 1px var(--dark-gray) solid;
+    background: var(--gray);
+    font-size: 1.5rem;
+    height: 50px;
+    margin: auto;
+    padding: 0 1rem;
+    transition: background 200ms ease-in-out;
+    width: 100%;
+    text-align: center;
+}
+
+.form-section form input[type='text']:focus {
+    background: var(--light-gray);
+}
+
+.form-section form button[type='submit'] {
+    background: var(--gray);
+    outline: none;
+    border: 1px var(--dark-gray) solid;
+    font-size: 1.3rem;
+    height: 50px;
+    width: 50px;
+    transition: background 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.form-section form button[type='submit']:hover {
+    background: var(--gold);
+}
+
+/* weather section */
+.weather-section {
+    max-width: 400px;
+    width: 100%;
+    
+}
+
+.weather-section .card {
+    border: 1px solid var(--dark-gray);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    -webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 1);
+    border-radius: 1rem;
+}
+
+.weather-section .card .info {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.weather-section .card .info p:nth-child(1) {
+    text-align: left;
+    width: 75%;
+}
+
+.weather-section .card .info p:nth-child(2) {
+    text-align: center;
+    width: 25%;
+}
+
+.weather-section .card .category {
+    width: 100%;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.weather-section .card .info.img {
+    justify-content: center;
+    width: 100%;
+}
+
+/* footer */
+.footer {
+    flex-direction: column;
+    background: white;
+    border-top: 1px solid var(--gold);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 0;
+    font-size: 0.8rem;
+} 
+
