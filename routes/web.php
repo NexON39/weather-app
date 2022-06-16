@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [App\Http\Controllers\weather::class, 'index']);
+Route::get('/', [App\Http\Controllers\weather::class, 'index'])->name('indexRoute');
+Route::post('/', [App\Http\Controllers\weather::class, 'getWeather']);
