@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class Weather extends Controller
 {
+
+    private WeatherDataApi $weatherDataApi;
+
+    public function __construct(WeatherDataApi $weatherDataApi)
+    {
+        $this->weatherDataApi = $weatherDataApi;
+    }
+
     public function index()
     {
         return view('index');
@@ -26,16 +34,15 @@ class Weather extends Controller
         }
 
         $inputData = $request->input('cityName');
-        $weatherData = new WeatherDataApi;
 
-        $location = $weatherData->getLocation($inputData);
+        $location = $this->weatherDataApi->getLocation($inputData);
         if ($location['status'] == 401) {
             return view('index', [
                 'alert' => $location['content']
             ]);
         }
 
-        $data = $weatherData->getWeatherData($location['lat'], $location['lon']);
+        $data = $this->weatherDataApi->getWeatherData($location['lat'], $location['lon']);
         if ($data['status'] == 401) {
             return view('index', [
                 'alert' => $data['content']
