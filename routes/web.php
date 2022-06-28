@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Weather;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [App\Http\Controllers\weather::class, 'index'])->name('indexRoute');
-Route::post('/', [App\Http\Controllers\weather::class, 'getWeather'])->name('getWeatherRoute');
+Route::get('/', [Weather::class, 'index'])->name('indexRoute');
+Route::post('/', [Weather::class, 'getWeather'])->name('getWeatherRoute');

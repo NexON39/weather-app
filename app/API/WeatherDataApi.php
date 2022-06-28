@@ -59,7 +59,7 @@ class WeatherDataApi extends GeoCodingApi implements WeatherApiInterface
         } catch (Exception $e) {
             return [
                 'status' => 401,
-                'content' => 'No result'
+                'content' => 'No result' . '(' . $e->getMessage() . ')'
             ];
         }
     }
